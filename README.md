@@ -1,3 +1,31 @@
+# Setup protoc:
+
+- Mac: brew install protobuf 
+- Windows: 
+```
+Download the windows archive: https://github.com/google/protobuf/releases
+
+Example: https://github.com/google/protobuf/releases/download/v3.5.1/protoc-3.5.1-win32.zip
+
+Extract all to C:\proto3  
+
+Your directory structure should now be
+
+C:\proto3\bin 
+
+C:\proto3\include 
+
+Finally, add C:\proto3\bin to your PATH:
+
+From the desktop, right-click My Computer and click Properties.
+In the System Properties window, click on the Advanced tab
+In the Advanced section, click the Environment Variables button.
+Finally, in the Environment Variables window (as shown below), highlight the Path variable in the Systems Variable section and click the Edit button. Add or modify the path lines with the paths you wish the computer to access. Each different directory is separated with a semicolon as shown below.
+
+C:\Program Files; C:\Winnt; ...... ; C:\proto3\bin
+(you need to add ; C:\proto3\bin  at the end)
+```
+
 # Commands:
 
 - protoc -I=proto --python_out=python proto/*.proto
@@ -19,3 +47,8 @@
 - hint: 'development'. The just-created branch can be renamed via this command:
 - hint:
 - hint: git branch -m <name>
+
+# Golang:
+
+- go get -u github.com/golang/protobuf/protoc-gen-go
+- go get -u github.com/golang/protobuf/proto
