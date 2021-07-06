@@ -52,3 +52,4 @@ C:\Program Files; C:\Winnt; ...... ; C:\proto3\bin
 
 - go get -u github.com/golang/protobuf/protoc-gen-go
 - go get -u github.com/golang/protobuf/proto
+- Add to proto file an output folder: option go_package = "./simple";
