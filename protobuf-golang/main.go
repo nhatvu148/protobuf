@@ -6,13 +6,40 @@ import (
 	"log"
 
 	"github.com/nhatvu148/protobuf/src/simple"
+	"google.golang.org/protobuf/encoding/protojson"
 	"google.golang.org/protobuf/proto"
 )
 
 func main() {
 	sm := doSimple()
 
-	ReadAndWriteDemo(sm)
+	// ReadAndWriteDemo(sm)
+	jsonDemo(sm)
+}
+
+func jsonDemo(sm proto.Message) {
+	smAsString := toJSON(sm)
+	fmt.Println(smAsString)
+
+	sm2 := &simple.SimpleMessage{}
+	fromJSON([]byte(smAsString), sm2)
+	fmt.Println("Successfully created proto struct:", sm2)
+}
+
+func fromJSON(in []byte, pb proto.Message) {
+	err := protojson.Unmarshal(in, pb)
+	if err != nil {
+		log.Fatalln("Couldn't unmarshal the JSON into the pb struct", err)
+	}
+}
+
+func toJSON(pb proto.Message) string {
+	out, err := protojson.Marshal(pb)
+	if err != nil {
+		log.Fatalln("Can't convert to JSON", err)
+		return ""
+	}
+	return string(out)
 }
 
 func ReadAndWriteDemo(sm proto.Message) {
