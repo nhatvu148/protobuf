@@ -1,19 +1,20 @@
 # Setup protoc:
 
-- Mac: brew install protobuf 
-- Windows: 
+- Mac: brew install protobuf
+- Windows:
+
 ```
 Download the windows archive: https://github.com/google/protobuf/releases
 
 Example: https://github.com/google/protobuf/releases/download/v3.5.1/protoc-3.5.1-win32.zip
 
-Extract all to C:\proto3  
+Extract all to C:\proto3
 
 Your directory structure should now be
 
-C:\proto3\bin 
+C:\proto3\bin
 
-C:\proto3\include 
+C:\proto3\include
 
 Finally, add C:\proto3\bin to your PATH:
 
@@ -28,11 +29,11 @@ C:\Program Files; C:\Winnt; ...... ; C:\proto3\bin
 
 # Commands:
 
-- protoc -I=proto --python_out=python proto/*.proto
-- protoc -I=proto --java_out=java proto/*.proto
-- protoc -I=proto --js_out=javascript proto/*.proto
-- protoc -I=proto --csharp_out=csharp proto/*.proto
-- protoc -I=proto --cpp_out=cpp proto/*.proto
+- protoc -I=proto --python_out=python proto/\*.proto
+- protoc -I=proto --java_out=java proto/\*.proto
+- protoc -I=proto --js_out=javascript proto/\*.proto
+- protoc -I=proto --csharp_out=csharp proto/\*.proto
+- protoc -I=proto --cpp_out=cpp proto/\*.proto
 
 # Git default name:
 
@@ -53,3 +54,12 @@ C:\Program Files; C:\Winnt; ...... ; C:\proto3\bin
 - go get -u github.com/golang/protobuf/protoc-gen-go
 - go get -u github.com/golang/protobuf/proto
 - Add to proto file an output folder: option go_package = "./simple";
+
+# Import local modules:
+
+```
+In async folder: go mod init github.com/nhatvu148/go-lang/async
+Enter hackerrank folder: go mod edit -replace=github.com/nhatvu148/go-lang/async=../async
+go get github.com/nhatvu148/go-lang/async
+Reference: https://golang.org/doc/tutorial/call-module-code
+```
