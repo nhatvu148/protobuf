@@ -5,6 +5,7 @@ import (
 	"io/ioutil"
 	"log"
 
+	"github.com/nhatvu148/protobuf/src/enumpb"
 	"github.com/nhatvu148/protobuf/src/simplepb"
 	"google.golang.org/protobuf/encoding/protojson"
 	"google.golang.org/protobuf/proto"
@@ -16,6 +17,18 @@ func main() {
 	// ReadAndWriteDemo(sm)
 	jsonDemo(sm)
 
+	doEnum()
+}
+
+func doEnum() {
+	em := enumpb.EnumMessage{
+		Id:           42,
+		DayOfTheWeek: enumpb.DayOfTheWeek_TUESDAY,
+	}
+
+	em.DayOfTheWeek = enumpb.DayOfTheWeek_MONDAY
+
+	fmt.Println(em)
 }
 
 func jsonDemo(sm proto.Message) {
