@@ -5,7 +5,7 @@ import (
 	"io/ioutil"
 	"log"
 
-	"github.com/nhatvu148/protobuf/src/simple"
+	"github.com/nhatvu148/protobuf/src/simplepb"
 	"google.golang.org/protobuf/encoding/protojson"
 	"google.golang.org/protobuf/proto"
 )
@@ -15,13 +15,14 @@ func main() {
 
 	// ReadAndWriteDemo(sm)
 	jsonDemo(sm)
+
 }
 
 func jsonDemo(sm proto.Message) {
 	smAsString := toJSON(sm)
 	fmt.Println(smAsString)
 
-	sm2 := &simple.SimpleMessage{}
+	sm2 := &simplepb.SimpleMessage{}
 	fromJSON([]byte(smAsString), sm2)
 	fmt.Println("Successfully created proto struct:", sm2)
 }
@@ -44,7 +45,7 @@ func toJSON(pb proto.Message) string {
 
 func ReadAndWriteDemo(sm proto.Message) {
 	writeToFile("simple.bin", sm)
-	sm2 := &simple.SimpleMessage{}
+	sm2 := &simplepb.SimpleMessage{}
 	readFromFile("simple.bin", sm2)
 	fmt.Println("Read the content:", sm2)
 }
@@ -81,8 +82,8 @@ func writeToFile(fname string, pb proto.Message) error {
 	return nil
 }
 
-func doSimple() *simple.SimpleMessage {
-	sm := simple.SimpleMessage{
+func doSimple() *simplepb.SimpleMessage {
+	sm := simplepb.SimpleMessage{
 		Id:         12345,
 		IsSimple:   true,
 		Name:       "My Simple Message",
