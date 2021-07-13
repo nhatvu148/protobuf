@@ -1,3 +1,10 @@
+# Reference:
+
+- https://developers.google.com/protocol-buffers/docs/proto3
+- https://courses.datacumulus.com/downloads/protocol-buffers-gm2/
+- https://courses.datacumulus.com/downloads/grpc-golang-j70/
+- https://courses.datacumulus.com/downloads/gprc-csharp-m0k/
+
 # Setup protoc:
 
 - Mac: brew install protobuf
