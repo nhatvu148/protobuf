@@ -4,6 +4,8 @@
 - https://courses.datacumulus.com/downloads/protocol-buffers-gm2/
 - https://courses.datacumulus.com/downloads/grpc-golang-j70/
 - https://courses.datacumulus.com/downloads/gprc-csharp-m0k/
+- https://jbrandhorst.com/post/gogoproto/
+- https://github.com/gogo/protobuf
 
 # Setup protoc:
 
