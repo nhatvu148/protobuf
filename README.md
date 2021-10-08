@@ -72,3 +72,13 @@ Enter hackerrank folder: go mod edit -replace=github.com/nhatvu148/go-lang/async
 go get github.com/nhatvu148/go-lang/async
 Reference: https://golang.org/doc/tutorial/call-module-code
 ```
+
+# New commands:
+
+- go mod edit -go=1.17
+- sudo snap install protobuf --classic
+- sudo apt  install protoc-gen-go
+- go install github.com/golang/protobuf/protoc-gen-go@latest
+- go list -m
+- go list -m all
+- go clean -modcache
