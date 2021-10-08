@@ -75,6 +75,9 @@ Reference: https://golang.org/doc/tutorial/call-module-code
 
 # New commands:
 
+- Download: https://github.com/protocolbuffers/protobuf/releases
+- add the entry in /usr/.bash_profile as export PROTOC_HOME=/user/app/protoc; export PATH=$PROTOC_HOME/bin:$PATH
+- refresh file $source /usr/<username>/.bash_profile
 - go mod edit -go=1.17
 - sudo snap install protobuf --classic
 - sudo apt  install protoc-gen-go
